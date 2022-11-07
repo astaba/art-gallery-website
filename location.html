@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="CSS/style.css">
   <title>Art gallery Location</title>
 </head>
 
 <body id="location">
+  <header>
+    <div class="locater wraper blackboard">
+      <a href="index.html" class="btn btn-left"><img src="images/icon-arrow-left.svg" alt=""><span>Back to Home</span></a>
+    </div>
+    <div id="map"></div>
+  </header>
 
   <main class="blackboard vert-paddwise">
     <div class="wraper">
@@ -40,8 +48,18 @@
     </div> <!-- /wraper -->
   </footer>
 
+  <script>
+    "use strict"
 
+    const map = L.map("map").setView([41.48, -71.313], 14);
 
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
+    const marker = L.marker([41.48, -71.311]).addTo(map);
+    marker.bindPopup("<b>Modern Art Gallery</b><br>Edward King House<br>99 King Street").openPopup();
+  </script>
 </body>
 </html>
