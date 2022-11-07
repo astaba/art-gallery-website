@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Outfit:wght@300&display=swap');
+
+:root {
+  --clr-neutral-100: hsla(0, 0%, 100%, 1);
+  --clr-neutral-030: hsla(0, 0%, 27%, 1);
+  --clr-neutral-010: hsla(0, 0%, 8%, 1);
+  --clr-primary-100: hsla(24, 56%, 63%, 1);
+
+  --ff-heading: 'Big Shoulders Display', cursive;
+  --ff-body: 'Outfit', sans-serif;
+
+  --fz-title-100: 3.75rem;
+  --fz-title-110: 3.125rem;
+  --fz-title-200: 3.125rem;
+  --fz-title-210: 2rem;
+  --fz-body: 1.125rem;
+  --fz-footer: 1rem;
+  --fz-btn: 1.25rem;
+
+  --fw-reg: 300;
+  --fw-bolder: 700;
+  --fw-bold: 900;
+
+  --paddwiser: 1rem;
+}
+
+/* ===================================================
+============  General Settings =======================
+====================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class] {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--clr-neutral-010);
+}
+
+
+body {
+  margin: 0;
+  color: var(--clr-neutral-030);
+  font-family: var(--ff-body);
+  font-size: var(--fz-body);
+  font-weight: var(--fw-reg);
+  line-height: 1.5;
+}
+
+/* =============== Utility Classes ================== */
+.wraper {
+  padding-left: var(--left-padd, var(--paddwiser));
+  padding-right: var(--right-padd, var(--paddwiser));
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1160px;
+}
+
+.vert-paddwise {
+  padding-top: var(--top-padd, var(--paddwiser));
+  padding-bottom: var(--bot-padd, var(--paddwiser));
+}
+
+/* .flowise>* {
+  margin-bottom: 1em;
+}
+.flowise>*:last-child {
+  margin-bottom: 0;
+} */
+.flowise>*+* {
+  margin-top: var(--flowiser, 1em);
+}
+
+.gridwise {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: dense;
+  row-gap: var(--row-gap, 1rem);
+}
+
+.blackboard {
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-010);
+}
+
+.blackboard h1,
+.blackboard h2 {
+  color: var(--clr-neutral-100);
+}
+
+/* ===================================================
+====================  Main ===========================
+====================================================== */
+
+main {
+  --top-padd: calc(var(--paddwiser) * 4);
+  --bot-padd: calc(var(--paddwiser) * 4);
+}
+
+#home main img {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#home .gallery h2 {
+  font-size: var(--fz-title-200);
+}
+
+.white-card {
+  padding: 2.5rem 0;
+}
+
+.black-card {
+  padding: 2.5rem 1.5rem;
+}
+
+/* ===================================================
+===============  Media Queries =======================
+====================================================== */
+
+@media all and (min-width: 570px) {
+  :root {
+    /* --fz-title-100: 4.375rem; */
+    --fz-title-110: 3.4375rem;
+    --paddwiser: 2rem;
+  }
+
+  .gridwise {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--column-gap, 1rem);
+  }
+
+  main {
+    --top-padd: calc(var(--paddwiser) * 2.5);
+    --bot-padd: calc(var(--paddwiser) * 2.5);
+  }
+
+  .white-card {
+    grid-column: 1/span 5;
+  }
+
+  .img-grid-1 {
+    grid-column: span 7/-1;
+  }
+
+  .img-grid-2 {
+    grid-column: 1/span 7;
+    grid-row: span 2;
+  }
+
+  .img-grid-3 {
+    grid-column: span 5;
+  }
+
+  .black-card {
+    grid-column: span 5;
+    padding: 2.5rem 1.5rem;
+  }
+
+}
+
+@media all and (min-width: 880px) {
+  :root {
+    --fz-title-100: 6rem;
+    --fz-title-110: 4.375rem;
+    --fz-title-200: 3.75rem;
+    --fz-title-210: 2.25rem;
+    --fz-body: 1.375rem;
+    --fz-footer: 1.125rem;
+    --paddwiser: 3rem;
+  }
+
+  .white-card {
+    grid-column: 1/span 4;
+  }
+
+  .black-card {
+    padding: 3rem;
+  }
+
+}
