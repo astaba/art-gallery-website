@@ -135,6 +135,39 @@ main {
 }
 
 /* ===================================================
+==================  Footer ===========================
+====================================================== */
+
+footer {
+  --left-padd: calc(var(--paddwiser) * 2);
+  --right-padd: calc(var(--paddwiser) * 2);
+  --top-padd: calc(var(--paddwiser) * 3);
+  --bot-padd: calc(var(--paddwiser) * 3);
+  --row-gap: 2.5rem;
+  font-size: var(--fz-footer);
+}
+
+/*================ Social List =======================*/
+.sns-list {
+  list-style: none;
+  display: flex;
+}
+
+.sns-item:not(:first-child) {
+  margin-left: 2em;
+}
+
+.sns-item svg path {
+  fill: var(--clr-neutral-100);
+  transition: fill 110ms ease-out 70ms;
+}
+
+.sns-item a:focus svg path,
+.sns-item a:hover svg path {
+  fill: var(--clr-primary-100);
+}
+
+/* ===================================================
 ===============  Media Queries =======================
 ====================================================== */
 
@@ -175,6 +208,26 @@ main {
   .black-card {
     grid-column: span 5;
     padding: 2.5rem 1.5rem;
+  }
+
+  footer {
+    --left-padd: var(--paddwiser);
+    --right-padd: var(--paddwiser);
+    --top-padd: calc(var(--paddwiser) * 3 / 2);
+    --bot-padd: calc(var(--paddwiser) * 3 / 2);
+  }
+
+  .footer .logo {
+    grid-column: span 2;
+  }
+
+  .footer p {
+    grid-column: 4/span 5;
+  }
+
+  .footer ul {
+    grid-column: span 2/-1;
+    justify-self: end;
   }
 
 }
