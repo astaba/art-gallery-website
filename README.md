@@ -12,6 +12,7 @@ This is a solution to the [Art gallery website challenge on Frontend Mentor](htt
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
+    - [The picture element](#the-picture-element)
   - [Author](#author)
 
 ## Overview
@@ -67,6 +68,29 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+
+### The picture element
+
+```html
+<picture>
+  <source
+    media="(min-width: 880px)"
+    srcset="
+      images/desktop/image-hero.jpg    1x,
+      images/desktop/image-hero@2x.jpg 2x
+    "
+  />
+  <source
+    media="(min-width: 570px)"
+    srcset="images/tablet/image-hero.jpg 1x, images/tablet/image-hero@2x.jpg 2x"
+  />
+  <img
+    src="images/mobile/image-hero.jpg"
+    alt=""
+    srcset="images/mobile/image-hero@2x.jpg 2x"
+  />
+</picture>
+```
 
 ## Author
 
